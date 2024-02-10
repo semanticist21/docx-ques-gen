@@ -1,0 +1,22 @@
+// make sure that these configurations match the ones in tauri.conf.json
+$base-width: 60rem;
+$base-height: 32rem;
+
+$default-min-width: $base-width;
+$default-min-height: $base-height;
+
+$default-width: 100%;
+$default-height: 100%;
+
+html,
+body,
+body > div {
+  min-width: $default-min-width;
+  min-height: $default-min-height;
+
+  width: $default-width;
+  height: $default-height;
+
+  user-select: none;
+  margin: 0;
+}

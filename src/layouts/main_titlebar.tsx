@@ -41,6 +41,7 @@ const MainTitle = () => {
     '&:hover': {
       backgroundColor: theme.palette.grey[300],
     },
+    boxShadow: 'none',
   }
 
   const genBtn = (icon: ReactNode, callback: () => void, id?: string) => {

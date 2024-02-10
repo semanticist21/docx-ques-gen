@@ -12,7 +12,7 @@ const ContainerWithSplash: FC<PropsWithChildren> = ({children}) => {
   }, [])
 
   return (
-    <div className="relative h-full" style={{paddingTop: height}}>
+    <div className="relative h-full overflow-y-auto" style={{paddingTop: height}}>
       <SplashScreen isShow={showSplash} />
       <div className={cn(showSplash ? 'hidden' : '')}> {children}</div>
     </div>

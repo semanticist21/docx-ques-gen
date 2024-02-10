@@ -1,5 +1,3 @@
-
-
 import {Box, SxProps} from '@mui/material'
 import PrintPage from '@/pages/print_page'
 import SettingPage from '@/pages/setting_page'

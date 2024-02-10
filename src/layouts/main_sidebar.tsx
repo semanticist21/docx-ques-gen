@@ -34,6 +34,9 @@ export const MainSidebar: FC = () => {
     width: theme.drawerWidth,
     flexShrink: 0,
     margin: 0,
+    '& div': {
+      overflow: 'hidden',
+    },
   }
 
   const itemStyle: SxProps = {

@@ -1,4 +1,6 @@
-import DocView from "@/components/molecules/doc_view"
+import DocView from '@/components/molecules/doc_view'
+import {NetworkWifi1Bar} from '@mui/icons-material'
+import {useEffect, useState} from 'react'
 
 const PrintPage = () => {
   // options to make.
@@ -10,16 +12,26 @@ const PrintPage = () => {
   // 4. 자리수 섞기
   // 5. 동일 수 제한(4444 등)
   // >> 정답지는 한 번에 인쇄할 수 있도록(문제 생성을 계속 선택..)? 좀 더 생각해보자
-  // export const DocumnetTypes = ['competition', 'normal', 'children'] as const
+  // export const Document Types = ['competition', 'normal', 'children'] as const
 
   const docTest: string = 'https://calibre-ebook.com/downloads/demos/demo.docx'
 
-  return (
-    <div>
-      <h1>Print Page</h1>
-      <DocView links={[docTest]} />
-    </div>
-  )
+  const local = import.meta.env.BASE_URL + 'docs/demo.docx'
+  const [file, setFile] = useState<File>()
+
+  useEffect(() => {
+    fetch(local).then(async resp => {
+      const data = await resp.blob()
+
+      const newFile = new File([data], 'demo.docx', {
+        type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      })
+
+      setFile(newFile)
+    })
+  }, [])
+
+  return <div>{file && <DocView locals={[file]} />}</div>
 }
 
 export default PrintPage

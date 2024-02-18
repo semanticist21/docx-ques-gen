@@ -21,11 +21,13 @@ const DocView = ({links, locals}: DocViewProps) => {
 
   if (docs.length === 0) return <div>표시할 문서가 없습니다.</div>
 
+  console.log(docs)
+
   return (
     <DocViewer
-      initialActiveDocument={docs[0]}
+      // initialActiveDocument={docs[0]}
       pluginRenderers={DocViewerRenderers}
-      documents={[docs]}
+      documents={docs}
       style={{height: '28rem', padding: '1rem'}}
       config={{
         header: {

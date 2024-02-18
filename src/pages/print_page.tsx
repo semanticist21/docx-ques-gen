@@ -23,6 +23,12 @@ const PrintPage = () => {
     fetch(local).then(async resp => {
       const data = await resp.blob()
 
+      // const url = URL.createObjectURL(data)
+      // const a = document.createElement('a')
+      // a.href = url
+      // a.download = 'demo.docx'
+      // a.click()
+
       const newFile = new File([data], 'demo.docx', {
         type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
       })

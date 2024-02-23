@@ -1,5 +1,4 @@
 import DocView from '@/components/molecules/doc_view'
-import {NetworkWifi1Bar} from '@mui/icons-material'
 import {useEffect, useState} from 'react'
 
 const PrintPage = () => {
@@ -15,29 +14,25 @@ const PrintPage = () => {
   // export const Document Types = ['competition', 'normal', 'children'] as const
 
   const docTest: string = 'https://calibre-ebook.com/downloads/demos/demo.docx'
-
   const local = import.meta.env.BASE_URL + 'docs/demo.docx'
-  const [file, setFile] = useState<File>()
+
+  // state props
+  const [str, setStr] = useState<string>('')
 
   useEffect(() => {
     fetch(local).then(async resp => {
       const data = await resp.blob()
 
-      // const url = URL.createObjectURL(data)
-      // const a = document.createElement('a')
-      // a.href = url
-      // a.download = 'demo.docx'
-      // a.click()
+      const reader = new FileReader()
+      reader.readAsDataURL(data)
 
-      const newFile = new File([data], 'demo.docx', {
-        type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      })
-
-      setFile(newFile)
+      reader.onload = () => {
+        setStr(reader.result as string)
+      }
     })
   }, [])
 
-  return <div>{file && <DocView locals={[file]} />}</div>
+  return <div>{str && <DocView links={[docTest]} blobs={[]} />}</div>
 }
 
 export default PrintPage

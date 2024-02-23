@@ -1,5 +1,5 @@
 /**
- *
+ * @deprecated deprecated due to not using next.js anymore
  * @returns window validity
  */
 export const handleIsTauriWindowLoaded = () => {

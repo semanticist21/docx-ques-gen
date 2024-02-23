@@ -6,6 +6,8 @@ import MainTitle from './layouts/main_titlebar'
 import MainAppPage from './layouts/main_app_page'
 import './globals.scss'
 
+import * as buffer from 'buffer/index'
+
 function App() {
   return (
     <ThemeCustomProvider>

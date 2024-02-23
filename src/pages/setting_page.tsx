@@ -20,7 +20,7 @@ const SettingPage = () => {
   }
 
   // options props
-  const documnetSelectOptions: SelectOptionProps = {
+  const documentSelectOptions: SelectOptionProps = {
     id: getUuid(),
     title: '1. 문제집 종류',
     description: '문서의 형식을 선택합니다.',
@@ -45,7 +45,7 @@ const SettingPage = () => {
 
   return (
     <div>
-      <OptionSelect {...documnetSelectOptions} />
+      <OptionSelect {...documentSelectOptions} />
     </div>
   )
 }

@@ -17,11 +17,6 @@ export default defineConfig(() => ({
         global: true,
         process: true,
       },
-      overrides: {
-        // Since `fs` is not supported in browsers, we can use the `memfs` package to polyfill it.
-        fs: 'memfs',
-        os: 'os-browserify',
-      },
       protocolImports: true,
     }),
   ],

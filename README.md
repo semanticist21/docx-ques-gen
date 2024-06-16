@@ -8,3 +8,5 @@ This template should help get you started developing with Tauri, React and Types
 
 
 #~Project suspended due to the docx rendering issue~
+
+#_This project has been kept for record-keeping purposes.
